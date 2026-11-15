@@ -1,6 +1,6 @@
-# service-template
+# reference-service
 
-Template for a Go service on the homelab platform (Karppimc/homelab-platform): code skeleton, Dockerfile, CI and the values file for the platform's service chart.
+The reference service of the homelab platform (Karppimc/homelab-platform): created from Karppimc/service-template and deployed by Argo CD into the namespace `reference`. It shows what a service on the paved road looks like.
 
 Golden-path rules and skills come from the golden-path plugin; this file only adds what is unique to this repo.
 
@@ -17,4 +17,4 @@ Golden-path rules and skills come from the golden-path plugin; this file only ad
 - The image tag is the commit SHA. A release is a pull request that changes `image.tag` in `deploy/values.yaml` to a commit whose image CI has pushed.
 - Versions are pinned in the `env` block of the workflow (actions by commit SHA, binaries by SHA256) and in the Dockerfile (digests). The platform tool versions there should match homelab-platform's `validate.yml`.
 - Checks before a PR: `gofmt -l .`, `go vet ./...`, `go test ./...`, `yamllint .`, `docker build .`.
-- This is a template repository: everything here is copied into every service created from it. Keep it small.
+- Changes that every service should get belong in Karppimc/service-template first; this repo stays close to it on purpose.
