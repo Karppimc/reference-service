@@ -2,6 +2,10 @@
 
 The reference service of the [homelab platform](https://github.com/Karppimc/homelab-platform): a small Go HTTP service created from [service-template](https://github.com/Karppimc/service-template) and deployed by Argo CD. It exists to show, and to keep proving, that a service built from the template runs on the platform without any extra work: no Kubernetes manifests, no policy exceptions.
 
+## Where it runs
+
+`https://reference.home.arpa/` on the LAN (the name has to resolve to a cluster node, today through the hosts file, and the platform CA has to be trusted). Inside the cluster: `http://reference-service.reference.svc`.
+
 ## What it does
 
 | Endpoint | Purpose |
