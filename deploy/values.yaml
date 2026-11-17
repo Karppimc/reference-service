@@ -13,6 +13,10 @@ image:
   tag: d1508c0566da58aaf2801d28a83ee38e4e41af62
 
 port: 8080
+
+# Published on the LAN over HTTPS, with a certificate from the platform CA
+ingress:
+  host: reference.home.arpa
 replicas: 2
 
 # Memory request and limit are required by policy. Raise them from measurements
